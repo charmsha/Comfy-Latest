@@ -1,4 +1,3 @@
-
 import { Filters, PaginationContainer, ProductsContainer } from "../components";
 import { customFetch } from "../utils";
 const url = "/products";
