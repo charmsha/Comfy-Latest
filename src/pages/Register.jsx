@@ -5,13 +5,12 @@ import { customFetch } from "../utils/index";
 import { toast } from "react-toastify";
 
 export const action = async ({ request }) => {
-  console.log(request);
-
   const formData = await request.formData();
-  console.log(formData);
 
   const data = Object.fromEntries(formData);
-  console.log(data);
+  // data.email = "test@test.com";
+  // data.password = "111111";
+  // data.username = "test";
 
   try {
     const response = await customFetch.post("/auth/local/register", data);
@@ -33,24 +32,9 @@ const Register = () => {
         className="card w-96 p-8 bg-base-100 shadow-lg flex flex-col gap-y-4"
       >
         <h4 className="text-center text-3xl font-bold">Register</h4>
-        <FormInput
-          type="text"
-          label="username"
-          name="username"
-          defaultValue="usi smith"
-        />
-        <FormInput
-          type="email"
-          label="email"
-          name="email"
-          defaultValue="usi@gmail.com"
-        />
-        <FormInput
-          type="password"
-          label="password"
-          name="password"
-          defaultValue="password"
-        />
+        <FormInput type="text" label="username" name="username" />
+        <FormInput type="email" label="email" name="email" />
+        <FormInput type="password" label="password" name="password" />
         <div className="mt-4">
           <SubmitBtn text="register" />
         </div>

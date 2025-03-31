@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormInput = ({ label, name, type, defaultValue,size }) => {
+const FormInput = ({ label, name, type, defaultValue, size }) => {
   return (
     <div>
       <label className="form-control">
@@ -9,8 +9,8 @@ const FormInput = ({ label, name, type, defaultValue,size }) => {
         </div>
         <input
           type={type}
-          placeholder={defaultValue}
           name={name}
+          defaultValue={defaultValue} 
           className={`input input-bordered ${size}`}
         />
       </label>
